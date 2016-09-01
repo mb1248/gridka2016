@@ -4,13 +4,13 @@
 #include <new>
 
 
-int* makeIntArrayWith10Items() {
-  return new int[10];
+auto makeIntArrayWith10Items() {
+  return std::array<int, 10>();
 }
 
 
-char* makeString(int size) {
-  return new char[size];
+auto makeString(int size) {
+  return std::vector<char>(size);
 }
 
 
@@ -25,9 +25,10 @@ void saveImageToDisk(const std::vector<char>& /*img*/) {
 
 
 int main() {
-  int* is = makeIntArrayWith10Items();
+  auto is = makeIntArrayWith10Items();
+  (void)is;
 
-  char* cs = makeString(10);
+  auto cs = makeString(10);
 
   std::vector<char> img = loadImageFromDisk();
   saveImageToDisk(img);
