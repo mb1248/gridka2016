@@ -14,12 +14,12 @@ char* makeString(int size) {
 }
 
 
-std::vector<char>* loadImageFromDisk() {
-  return new std::vector<char>(480 * 640);
+std::vector<char> loadImageFromDisk() {
+  return std::vector<char>(480 * 640);
 }
 
 
-void saveImageToDisk(const std::vector<char>* img) {
+void saveImageToDisk(const std::vector<char>& /*img*/) {
   // write img to disk
 }
 
@@ -29,6 +29,6 @@ int main() {
 
   char* cs = makeString(10);
 
-  std::vector<char>* img = loadImageFromDisk();
+  std::vector<char> img = loadImageFromDisk();
   saveImageToDisk(img);
 }
